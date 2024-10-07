@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(rgb(231, 231, 231), rgb(179, 165, 230));
+
+  .box-main {
+    border: none;
+    background-color: white;
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    .box-1 {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        font-size: 40px;
+      }
+      .box-icon {
+        display: flex;
+        gap: 8px;
+        padding: 10px 0;
+        p {
+          border: 1px solid #ccc;
+          padding: 5px;
+          border-radius: 6px;
+        }
+      }
+      span {
+        color: #848282;
+      }
+      .box-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0;
+        width: 100%;
+        input {
+          height: 30px;
+          width: 80%;
+          border: none;
+          outline: none;
+          border-radius: 6px;
+          background-color: #e6e6e6;
+          padding: 3px 10px;
+        }
+      }
+      p {
+        padding-bottom: 10px;
+        color: #848282;
+      }
+      button {
+        width: 50%;
+        height: 40px;
+        font-size: 15px;
+        padding: 8px 0;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        text-transform: uppercase;
+      }
+    }
+    .box-2 {
+      flex-basis: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background-color: black;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      h3 {
+        color: white;
+        padding: 10px 0;
+      }
+      img {
+        border-radius: 15px;
+        height: 50%;
+      }
+
+      button {
+        width: 50%;
+        height: 40px;
+        font-size: 15px;
+        background-color: black;
+        margin-top: 5px;
+        color: white;
+        padding: 8px 0;
+        border: 1px solid white;
+        border-radius: 8px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
