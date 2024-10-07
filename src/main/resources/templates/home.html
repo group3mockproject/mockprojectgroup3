@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+                href="/css/style.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+     <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-4">Welcome to Our Application!</h1>
+            <p class="lead">This is the home page of the application.</p>
+        </div>
+
+        <div class="mt-4">
+            <h2 class="h4">Navigation</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a class="btn btn-primary btn-block" th:href="@{/login}">Login</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="btn btn-success btn-block" th:href="@{/register}">Register</a>
+                </li>
+                <li class="list-group-item">
+                    <a class="btn btn-info btn-block" th:href="@{/userInfo}">User Info</a> <!-- Trang thông tin người dùng -->
+                </li>
+                <li class="list-group-item">
+                    <a class="btn btn-warning btn-block" th:href="@{/admin}">Admin Page</a> <!-- Trang quản trị -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</html>
