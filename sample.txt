@@ -1,0 +1,20 @@
+/*
+	This is a sample file
+	dungleanh297_Task_Day_4
+*/
+
+#ifndef ERROR_CODE_H
+#define ERROR_CODE_H
+
+typedef enum {
+	SUCCESS = 0,
+	ERR_FILE_NOT_FOUND = 1,
+	ERR_NOT_BMP = 2,
+	ERR_BITCOUNT_NOT_SUPPORTED = 3,
+	ERR_CORRUPTED_FILE = 4,
+	ERR_INVALID_ARGUMENT = 5,
+	ERR_INVALID_NUMBER = 6,
+	ERR_OVERFLOW = 7
+} ERROR_CODE;
+
+#endif /* ERROR_CODE */
