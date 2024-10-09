@@ -643,6 +643,13 @@ button{
   gap: var(--space-1);
   margin-top: 17px;
 }
+.form-card .card-footer2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: 17px;
+}
 .form-card2{
   width: 500px;
   margin-inline: auto;
@@ -650,6 +657,7 @@ button{
   padding: 40px;
   border-radius: 150px 12px 12px 150px;
   background-color: rgb(16, 16, 51);
+  display: none;
 }
 .form-card2 .card-header{
   text-align: center;
@@ -744,6 +752,95 @@ section.section.form-section {
 
 
 
+/*-----------------------------------*\
+  #RESPONSIVE 
+\*-----------------------------------*/
 
+
+
+  
+  
+  
+  /**
+    FOR SCREEN LARGER THAN 768PX
+  */
+  
+  @media(min-width: 768px){
+  
+  /* REUSED STYLE */
+    .page{
+      padding-block: var(--space-6);
+    }
+    .page-title{
+      font-size: var(--fs-headline-medium);
+      line-height: var(--lh-headline-medium);
+      margin-block-end: var(--space-6);
+    }
+    .container{
+      max-width: 992px;
+      width: 100%;
+    }
+    .form-card .card-footer2{
+      display: none !important;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-1);
+      margin-top: 17px;
+    }
+  
+    /* COMPONENTS */
+/*   
+    .text-field-wrapper{
+      background-color: var(--surface-container);
+    } */
+  
+    /* REGISTER AND LOGIN */
+    .form-card2 {
+      width: 500px;
+      margin-inline: auto;
+      padding-inline: 50px;
+      padding: 40px;
+      border-radius: 150px 12px 12px 150px;
+      background-color: rgb(16, 16, 51);
+      display: block;
+    }
+    .form-card{
+      padding: var(--space-10);
+      border-radius: var(--radius-medium);
+      background-color: var(--surface-container);
+    }
+    .form-card .form{
+      margin-block: var(--space-6);
+    }
+    .form-card .logo{
+      margin-block-end: var(--space-2);
+    }
+  
+   
+  }
+  
+  
+  
+  /**
+    FOR SCREEN LARGER THAN 1200PX
+  */
+  @media (min-width: 1200px){
+    
+    .blog-actions{
+      bottom: var(--space-6);
+    }
+    .form-card2 {
+      width: 500px;
+      margin-inline: auto;
+      padding-inline: 50px;
+      padding: 40px;
+      border-radius: 150px 12px 12px 150px;
+      background-color: rgb(16, 16, 51);
+      display: block;
+    }
+  }
+  
+  
+  
 
 
