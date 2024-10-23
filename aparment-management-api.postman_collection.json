@@ -1,0 +1,653 @@
+{
+	"info": {
+		"_postman_id": "e2764e04-dac9-43f6-bc12-6065f2b67fbf",
+		"name": "aparment-management-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33869490",
+		"_collection_link": "https://module6.postman.co/workspace/module6-Workspace~b4a75f41-f362-4f25-856f-bb0e43584c6b/collection/33869490-e2764e04-dac9-43f6-bc12-6065f2b67fbf?action=share&source=collection_link&creator=33869490"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/auth/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"authenticate"
+					]
+				},
+				"description": "Api use to log in"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/logout?userId=1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "api use to log out"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/user-role",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/user-role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"user-role"
+					]
+				},
+				"description": "api use to get role of current user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/get-profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/get-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"get-profile"
+					]
+				},
+				"description": "Api use to get current user's profile"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/update-password/1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"oldPassword\": \"1234\",\r\n    \"newPassword\": \"Admin123@\",\r\n    \"confirmPassword\": \"Admin123@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/update-password/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"update-password",
+						"1"
+					]
+				},
+				"description": "Api use to update password for account"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/update-info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"userCode\": \"EM0001\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"fullName\": \"Admin\",\r\n    \"gender\": 3,\r\n    \"dateOfBirth\": \"2024-10-23\",\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"address\": \"Computer\",\r\n    \"userRoles\": [\r\n        {\r\n            \"id\": 1,\r\n            \"appRole\": {\r\n                \"roleId\": 1,\r\n                \"roleName\": \"ROLE_ADMIN\"\r\n            }\r\n\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/update-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"update-info"
+					]
+				},
+				"description": "API use to update current user's information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/update-image",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"avatar\": \"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/update-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"update-image"
+					]
+				},
+				"description": "Api use to update current user's avatar"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/forgot-password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"phoneNumber\": \"0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/check-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"check-email"
+					]
+				},
+				"description": "api used to check if email exists or not"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/customer?userCode=&fullName=&page=",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"newPassword\": \"Admin@123\",\r\n    \"confirmPassword\": \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/forgot-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"forgot-password"
+					]
+				},
+				"description": "API use to forgot user's password"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/employees?userCode=&fullName=&page=",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users/customer?userCode=&fullName=&page=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "userCode",
+							"value": ""
+						},
+						{
+							"key": "fullName",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				},
+				"description": "API use to get all customer with search key (userCode, fullName, page)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users/employees?userCode=&fullName=&page=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "userCode",
+							"value": ""
+						},
+						{
+							"key": "fullName",
+							"value": ""
+						},
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				},
+				"description": "API use to get all employees with search key (userCode, fullName, page)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"1"
+					]
+				},
+				"description": "API use to find user By userId"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"iamcustomer2@gmail.com\",\r\n    \"userRoles\": [\r\n        {\r\n            \"appRole\": {\r\n                \"roleId\": 4,\r\n                \"roleName\": \"ROLE_CUSTOMER\"\r\n            }\r\n        }\r\n    ],\r\n    \"avatar\": \"abcd\",\r\n    \"fullName\": \"I am Customer second\",\r\n    \"dateOfBirth\": \"2000-10-10\",\r\n    \"gender\": 1,\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"address\": \"Universe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users"
+					]
+				},
+				"description": "API use to save new user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/disable/4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 4,\r\n    \"email\": \"iamcustomer2@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"userCode\": \"CU0002\",\r\n    \"userRoles\": [\r\n        {\r\n            \"id\": 4,\r\n            \"appRole\": {\r\n                \"roleId\": 4,\r\n                \"roleName\": \"ROLE_CUSTOMER\"\r\n            }\r\n        }\r\n    ],\r\n    \"avatar\": \"abcd\",\r\n    \"fullName\": \"I am Customer second\",\r\n    \"dateOfBirth\": \"2000-10-10\",\r\n    \"gender\": 0,\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"address\": \"Universe\",\r\n    \"accountNonExpired\": 1,\r\n    \"accountNonLocked\": 1,\r\n    \"credentialsNonExpired\": 1,\r\n    \"enabled\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"4"
+					]
+				},
+				"description": "API use to udate user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/users/enable/4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer",
+						"type": "text"
+					},
+					{
+						"key": "Userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/users/disable/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"disable",
+						"4"
+					]
+				},
+				"description": "API use to disable account"
+			},
+			"response": []
+		}
+	]
+}
